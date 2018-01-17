@@ -1,0 +1,2 @@
+# practicals
+UNIVERSITY PRACTICALS(IT) SPPU
