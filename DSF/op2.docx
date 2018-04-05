@@ -1,0 +1,91 @@
+1.Admit a Patient 
+2.Serve a Patient 
+3.Display
+4.exit: 
+ENTER YOUR CHOICE :1
+Enter pid: 56
+
+Enter Name of Patient: rohan
+
+Enter Priority(1.Serious 2.Non-Serious(Medium) 3.General): 1
+
+1.Admit a Patient 
+2.Serve a Patient 
+3.Display
+4.exit: 
+ENTER YOUR CHOICE :1
+Enter pid: 57
+
+Enter Name of Patient: sheetal
+
+Enter Priority(1.Serious 2.Non-Serious(Medium) 3.General): 2
+
+1.Admit a Patient 
+2.Serve a Patient 
+3.Display
+4.exit: 
+ENTER YOUR CHOICE :1
+Enter pid: 58
+
+Enter Name of Patient: rashi
+
+Enter Priority(1.Serious 2.Non-Serious(Medium) 3.General): 3
+
+1.Admit a Patient 
+2.Serve a Patient 
+3.Display
+4.exit: 
+ENTER YOUR CHOICE :3
+
+1.Patient Details: 
+
+serious:
+	P-id	Name
+	56	rohan
+
+2.Medium non-serious:
+	P-id	Name
+	57	sheetal
+
+3.general:
+
+	P-id	Name
+	58	rashi
+1.Admit a Patient 
+2.Serve a Patient 
+3.Display
+4.exit: 
+ENTER YOUR CHOICE :2
+
+AFTER SERVING THE PATEINT:
+deleted pid	56
+1.Admit a Patient 
+2.Serve a Patient 
+3.Display
+4.exit: 
+ENTER YOUR CHOICE :2
+
+AFTER SERVING THE PATEINT:
+deleted pid	57
+1.Admit a Patient 
+2.Serve a Patient 
+3.Display
+4.exit: 
+ENTER YOUR CHOICE :2
+
+AFTER SERVING THE PATEINT:
+deleted pid	58
+1.Admit a Patient 
+2.Serve a Patient 
+3.Display
+4.exit: 
+ENTER YOUR CHOICE :2
+
+no patient to serve
+
+1.Admit a Patient 
+2.Serve a Patient 
+3.Display
+4.exit: 
+ENTER YOUR CHOICE :4
+

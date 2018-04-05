@@ -1,0 +1,261 @@
+﻿/*REPRESENT A GIVEN GRAPH USING ADJACENCY MATRIX /ADJACENCY LIST AND FIND THE SHORTEST PATH USING DIJKSTRA'S ALGORITHM (SINGLE SOURCE ALL DESTINATION).
+
+NAME:SHASHWATI SURESH BEHARE.
+ROLL NO:04.
+DATE OF PERFORMANCE:
+DATE OF COMPLETION:
+
+*/
+
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+#define inf 999;
+class dij
+{
+	int g[10][10];
+	int n,e,i,j;
+	public:
+	void init()
+	{
+		for(i=0;i<n;i++)
+		{
+			for(j=0;j<n;j++)
+			{
+				g[i][j]=inf;
+			}
+		}
+	}
+	
+	void accept()
+	{
+		int u,v,w;
+		cout<<"\nENTER NO OF VERTICES";
+		cin>>n;
+		cout<<"\nENTER NO OF EDGES";
+		cin>>e;
+		init();
+		for(i=0;i<e;i++)
+		{
+			cout<<"\nENTER STARTING VERTEX";
+			cin>>u;
+			cout<<"\nENTER ENDING VERTEX";
+			cin>>v;
+			cout<<"\nENTER WEIGHT";
+			cin>>w;
+			if(w<0)
+			break;
+			g[u][v]=g[v][u]=w;
+		}
+	}
+	void display()
+	{
+		for(i=0;i<n;i++)
+		{
+			cout<<"\n";
+			for(j=0;j<n;j++)
+			{
+				cout<<"\t"<<g[i][j];
+			}
+		}
+	}
+	void disj()
+	{
+		int u,v,i,min;
+		int visited[10],dist[10],from[10];
+		cout<<"\nENTER STARTING VERTEX";
+		cin>>u;
+		int sv=u;
+		for(v=0;v<n;v++)
+		{
+			visited[v]=0;
+			from[v]=u;
+			dist[v]=g[u][v];
+		}
+		visited[u]=1;
+		for(i=0;i<n;i++)
+		{
+			min=999;
+			for(v=0;v<n;v++)
+			{
+				if(!visited[v]&&dist[v]<min)
+				{
+					min=dist[v];
+					u=v;
+				}
+			}
+			visited[u]=1;
+			for(v=0;v<n;v++)
+			{
+				if(!visited[v]&&(min+g[u][v]<dist[v]))
+				{
+					dist[v]=min+g[u][v];
+					from[v]=u;
+				}
+			}
+		}
+		for(v=0;v<n;v++)
+		{
+			if(v!=sv)
+			{
+				cout<<"\nPATH ="<<v;
+				u=v;
+				do
+				{
+					u=from[u];
+					cout<<"<-"<<u;
+				}while(u!=sv);
+				cout<<"\t\t===>"<<dist[v];
+			}
+		}
+	}
+};
+
+int main()
+{
+	int ch;
+	dij d;
+	while(1)
+	{
+		cout<<"\nMENU\n1.CREATE\n2.DIJKSTRA PATH\n3.EXIT\nENTER YOUR CHOICE";
+		cin>>ch;
+		switch(ch)
+		{
+			case 1:
+				d.accept();
+				d.display();
+				break;
+				
+			case 2:
+				d.disj();
+				break;	
+			
+			case 3:
+				exit(0);
+					
+		}
+	}
+	return 0;	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*student@itiss3:~$ cd shashwati/
+student@itiss3:~/shashwati$ g++ dstra.cpp
+student@itiss3:~/shashwati$ ./a.out
+
+MENU
+1.CREATE
+2.DIJKSTRA PATH
+3.EXIT
+ENTER YOUR CHOICE1
+
+ENTER NO OF VERTICES5
+
+ENTER NO OF EDGES5
+
+ENTER STARTING VERTEX0
+
+ENTER ENDING VERTEX1
+
+ENTER WEIGHT4
+
+ENTER STARTING VERTEX0
+
+ENTER ENDING VERTEX3
+
+ENTER WEIGHT8
+
+ENTER STARTING VERTEX1
+
+ENTER ENDING VERTEX2
+
+ENTER WEIGHT3
+
+ENTER STARTING VERTEX2
+
+ENTER ENDING VERTEX3
+
+ENTER WEIGHT4
+
+ENTER STARTING VERTEX3
+
+ENTER ENDING VERTEX4
+
+ENTER WEIGHT7
+
+	999	4	999	8	999
+	4	999	3	999	999
+	999	3	999	4	999
+	8	999	4	999	7
+	999	999	999	7	999
+MENU
+1.CREATE
+2.DIJKSTRA PATH
+3.EXIT
+ENTER YOUR CHOICE2
+
+ENTER STARTING VERTEX0
+
+PATH =1<-0		===>4
+PATH =2<-1<-0		===>7
+PATH =3<-0		===>8
+PATH =4<-3<-0		===>15
+MENU
+1.CREATE
+2.DIJKSTRA PATH
+3.EXIT
+ENTER YOUR CHOICE
+*/
+				

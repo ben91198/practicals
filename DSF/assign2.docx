@@ -1,0 +1,149 @@
+#include<iostream>
+#include<string.h>
+#include<cstdlib>
+using namespace std;
+
+struct node 
+	{
+        int pid;
+        char name[20];
+	struct node *next;
+	};
+class queue
+{
+	node *f,*r;
+	public:
+		queue()
+		{
+			f=r=NULL;
+		}
+		int empty();
+		void enqueue(int,char[]);
+		int dequeue();
+		void display();
+};
+int queue::empty()
+{
+	if(r==NULL)
+		return 1;
+	else
+		return 0;
+}
+void queue::enqueue(int x,char pname[])
+{
+	node *newnode=new node;
+	newnode->pid=x;
+	strcpy(newnode->name,pname);
+	newnode->next=NULL;
+	if(empty())
+		r=f=newnode;
+	else
+	{
+		r->next=newnode;
+		r=newnode;
+	}
+}
+
+int queue::dequeue()
+{
+	node *temp=f;
+	int x;
+	char pname[20];
+	x=temp->pid;
+	strcpy(pname,temp->name);
+	if(r==f)
+		r=f=NULL;
+	else
+		f=f->next;
+	delete temp;
+	return x;
+}
+
+void queue::display()
+{
+	node *temp=f;
+	cout<<"\n\tP-id\tName";
+	while(temp!=NULL)
+	{
+		cout<<"\n\t"<<temp->pid<<"\t"<<temp->name;
+		temp=temp->next;
+	}
+}
+
+class pq
+{
+	queue q[4];
+	public:
+		void admit();
+		void serve();
+		void display();
+};
+void pq::admit()
+{
+	int x;
+	char name[20];
+	int i;
+	cout<<"Enter pid: ";
+	cin>>x;
+	cout<<"\nEnter Name of Patient: ";
+	cin>>name;
+	cout<<"\nEnter Priority(1.Serious 2.Non-Serious(Medium) 3.General): ";
+	cin>>i;
+	q[i].enqueue(x,name);
+}
+
+void pq::serve()
+{
+	int x;
+	int i;
+	for(i=1;i<=3;i++)
+	{
+		if(!q[i].empty())
+		{
+			x=q[i].dequeue();
+			cout<<"\nAFTER SERVING THE PATEINT:";
+			cout<<"\ndeleted pid\t"<<x;
+			break;
+		}
+	}
+	if(i==4)
+	cout<<"no patient to serve";
+	
+}
+
+void pq::display()
+{
+	cout<<"\n1.Patient Details: ";
+	cout<<"\n\nserious:";
+	q[1].display();
+	cout<<"\n\n2.Medium non-serious:";
+	q[2].display();
+	cout<<"\n\n3.general:\n";
+	q[3].display();
+}
+int main()
+{
+	int ch;
+	pq q;
+	while(1)
+	{
+		cout<<"\n1.Admit a Patient \n2.Serve a Patient \n3.Display\n4.exit: ";
+		cout<<"\nENTER YOUR CHOICE :";
+		cin>>ch;
+		switch(ch)
+		{
+			case 1:
+					q.admit();
+					break;
+			case 2:
+				    q.serve();
+				    break;
+			case 3:
+					q.display();
+					break;
+			case 4:exit(0);
+				break;
+					
+		}
+	}return 0;
+}
