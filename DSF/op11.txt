@@ -1,0 +1,166 @@
+student@student12:~/se30$ g++ ass11.cpp
+student@student12:~/se30$ ./a.out
+
+Enter file name:
+ass11
+
+MENU
+1.create
+2.display
+3.append
+4.search
+5.modify
+6.delete
+7.exit
+Enter choice1
+
+Enter no of students:5
+
+Enter roll no & name:
+1
+mahi
+
+Enter roll no & name:
+2
+manish
+
+Enter roll no & name:
+3
+sagar
+
+Enter roll no & name:
+4
+pranav
+
+Enter roll no & name:
+5
+shashank
+
+MENU
+1.create
+2.display
+3.append
+4.search
+5.modify
+6.delete
+7.exit
+Enter choice2
+
+sr.no	Roll no	Name
+0	1	mahi
+1	2	manish
+2	3	sagar
+3	4	pranav
+4	5	shashank
+
+MENU
+1.create
+2.display
+3.append
+4.search
+5.modify
+6.delete
+7.exit
+Enter choice3
+
+Enter student roll & name:
+6
+yash
+
+sr.no	Roll no	Name
+0	1	mahi
+1	2	manish
+2	3	sagar
+3	4	pranav
+4	5	shashank
+5	6	yash
+
+MENU
+1.create
+2.display
+3.append
+4.search
+5.modify
+6.delete
+7.exit
+Enter choice4
+enter roll no6
+
+ROll no.	Name
+6	 	yash
+found
+MENU
+1.create
+2.display
+3.append
+4.search
+5.modify
+6.delete
+7.exit
+Enter choice4
+enter roll no8
+
+ not found
+MENU
+1.create
+2.display
+3.append
+4.search
+5.modify
+6.delete
+7.exit
+Enter choice5
+enter roll no5
+
+ROll no.	Name
+5	 	shashank
+found
+Enter roll no & name:
+5
+samarth
+
+sr.no	Roll no	Name
+0	1	mahi
+1	2	manish
+2	3	sagar
+3	4	pranav
+4	5	samarth
+5	6	yash
+
+MENU
+1.create
+2.display
+3.append
+4.search
+5.modify
+6.delete
+7.exit
+Enter choice6
+
+ROll no.	Name
+5	 	samarth
+Enter roll no to delete:
+6
+
+ROll no.	Name
+6	 	yash
+sr.no	Roll no	Name
+0	1	mahi
+1	2	manish
+2	3	sagar
+3	4	pranav
+4	5	samarth
+
+MENU
+1.create
+2.display
+3.append
+4.search
+5.modify
+6.delete
+7.exit
+Enter choice^Z
+[14]+  Stopped                 ./a.out
+student@student12:~/se30$ ^C
+student@student12:~/se30$ 
+
